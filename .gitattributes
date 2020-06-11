@@ -3,3 +3,4 @@ world_sv_0-8.tar.gz filter=lfs diff=lfs merge=lfs -text
 world_fi_9.tar.gz filter=lfs diff=lfs merge=lfs -text
 world_sv_9.tar.gz filter=lfs diff=lfs merge=lfs -text
 terrain_0-8.tar.gz filter=lfs diff=lfs merge=lfs -text
+terrain_9/** filter=lfs diff=lfs merge=lfs -text
