@@ -6,8 +6,8 @@ const { allRanges, europeRanges, finlandSwedenRanges } = require("./regions");
 
 const ranges = [
   ...allRanges.filter((range) => range.zoom <= 6),
-  europeRanges.find((range) => range.zoom === 7 || range.zoom === 8),
-  finlandSwedenRanges.find((range) => range.zoom === 9),
+  ...europeRanges.filter((range) => range.zoom === 7 || range.zoom === 8),
+  ...finlandSwedenRanges.filter((range) => range.zoom === 9),
 ];
 
 const mapRootPathFi = path.join(__dirname, "../temp/maps/world/fi");
