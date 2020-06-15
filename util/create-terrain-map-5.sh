@@ -1,6 +1,6 @@
 #!/bin/bash
-originalFiles=../maps/maasto_raw/5
-destinationPath=../maps/test/6
+originalFiles=../temp/maps/terrain/zoom_5
+destinationPath=../temp/terrain_6/
 
 rm -rf temp
 mkdir temp
@@ -43,7 +43,7 @@ montage temp/tile-*.png -reverse -tile 5x13 -geometry 3000x1500 temp/atlas.png
 width=$(identify -format "%[fx:w]" temp/atlas.png)
 height=$(identify -format "%[fx:h]" temp/atlas.png)
 
-# Area cropped from the image was determined manually by comparing atlas.png to the map in raw terrain images level 4
+# Area cropped from the image was determined manually by comparing atlas.png to the map in raw terrain images zoom 4
 echo "Cropping image to match other map aspect ratio"
 # Crop right
 convert temp/atlas.png -gravity west -extent "$(($width-2236))x${height}" temp/cropped.png
@@ -51,7 +51,7 @@ convert temp/atlas.png -gravity west -extent "$(($width-2236))x${height}" temp/c
 convert temp/cropped.png -gravity east -extent "$(($width-2236-1504))x${height}" temp/cropped.png
 
 echo "Moving atlas to destination"
-mv temp/scaled.png $destinationPath/K1.png
+mv temp/cropped.png $destinationPath/K1.png
 
 echo "Cleaning up!"
 
