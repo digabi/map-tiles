@@ -2,31 +2,24 @@ const fs = require("fs");
 const path = require("path");
 const { allRanges, europeRanges, finlandSwedenRanges } = require("./regions");
 
-const verbose = process.argv.includes("verbose");
+// Configuration
 
-const destinationArg = process.argv.find(
-  (arg) => arg.split("=")[0] === "destination"
-);
-const destinationValue =
-  destinationArg && destinationArg.replace(/"/g, "").split("=")[1];
-if (!destinationValue) {
-  console.error("Missing destination argument");
-  console.log(
-    "Add relative path to the destination where map files will be copied to"
-  );
-  console.log('Example: node copy-regions destination="../maps/smallworld"');
-  process.exit(1);
-}
-
-const destination = path.resolve(__dirname, destinationValue);
-console.log("Files will be copied to:", destination, "\n");
-
-// File ranges that will be copied
 const ranges = [
   ...allRanges.filter((range) => range.zoom <= 6),
   europeRanges.find((range) => range.zoom === 7 || range.zoom === 8),
   finlandSwedenRanges.find((range) => range.zoom === 9),
 ];
+
+const mapRootPathFi = path.join(__dirname, "../temp/maps/world/fi");
+const mapRootPathSv = path.join(__dirname, "../temp/maps/world/sv");
+
+const destination = path.join(__dirname, "../tiles/world");
+
+// Node app
+
+const verbose = process.argv.includes("verbose");
+
+console.log("Files will be copied to:", destination, "\n");
 
 console.log("Following ranges will be copied:");
 console.log("-", ranges.map((range) => range.name).join("\n- "), "\n");
@@ -41,8 +34,6 @@ const copy = async () => {
   }
 
   const startTime = Date.now();
-  const mapRootPathFi = path.join(__dirname, "../maps/world/fi");
-  const mapRootPathSv = path.join(__dirname, "../maps/world/sv");
 
   console.log("Copying finnish tiles");
   const destinationFi = path.join(destination, "fi");
