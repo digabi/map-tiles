@@ -46,3 +46,11 @@ Terrain map is generated using ImageMagick to scale, combine and split the origi
 Execute `create-terrain-map.sh` inside the util folder.
 
 If the script fails it can be run again as it removes the previously generated content automatically.
+
+## License
+
+This work is licensed under EUPL-1.1, except map tiles.
+
+World map is from OpenStreetMap with [license](https://www.openstreetmap.org/copyright).
+
+Terrain map is from Maanmittauslaitos with [license](https://www.maanmittauslaitos.fi/avoindata-lisenssi-cc40).
