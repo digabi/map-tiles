@@ -1,6 +1,7 @@
 # Packaging and storage for map tiles
 
 This repository contains map tiles and debian packaging for them. They are used in [exam help](https://github.com/digabi/koe-ohje) geography section.
+Also, the repo contains some music files used in music tab.
 
 The ability to fork this repository is restricted due to Git LFS bandwidth quota.
 
@@ -49,8 +50,7 @@ If the script fails it can be run again as it removes the previously generated c
 
 ## License
 
-This work is licensed under EUPL-1.1, except map tiles.
-
-World map is from OpenStreetMap with [license](https://www.openstreetmap.org/copyright).
-
-Terrain map is from Maanmittauslaitos with [license](https://www.maanmittauslaitos.fi/avoindata-lisenssi-cc40).
+This work is licensed under EUPL-1.1, except map tiles and music files.
+ * World map is from OpenStreetMap with [license](https://www.openstreetmap.org/copyright).
+ * Terrain map is from Maanmittauslaitos with [license](https://www.maanmittauslaitos.fi/avoindata-lisenssi-cc40).
+ * The sources and licenses of music files can be found in `LICENSE_MUSIC.md`.
