@@ -70,6 +70,10 @@
    * https://soundcloud.com/bleep-box/kfuc-120-wav
    * Downloaded: 29-NOV-2021
    * License: CC BY 3.0
+  * `nettspend_shine_n_peace.mp3` "Shine N Peace" by Nettspend
+   * https://soundcloud.com/fukcdissshit/nettspend-shine-n-peace-mag-xion
+   * Downloaded: 09-DEC-2024
+   * License: CC BY-NC-SA 3.0
 
 ## Preparing Sound Files
 
